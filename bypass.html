@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.mobile-1.4.0-rc.1.js"></script>
+		<script src="js/responsiveImg.js"> </script>
+
+		<script>
+		$("#logoGc").responsiveImg();
+		$("#logoCBA").responsiveImg();
+		$("#logoCCS").responsiveImg();
+		$("#logoCHAS").responsiveImg();
+		$("#logoCEAS").responsiveImg();
+		
+
+		$(document).ready(function(){
+			// ===================================Start of post display function ===========================================
+			$.ajax({
+					type: 'GET',
+					url:'http://iligtas.ph/eliza/viewpost.php',
+					dataType: 'html',
+					data: {},
+					success: function(data){
+						if(data){
+						$('#divPost').html(data);
+
+
+						}
+					}
+				});
+			//===================================End of post display function =============================================
+
+
+			//===================================== Function for Schedule====================================================
+				$.ajax({
+					type: 'GET',
+					url:'http://iligtas.ph/eliza/schedule.php',
+					dataType: 'html',
+					data: {},
+					success: function(data){
+						if(data){
+				$('#divSchedule').html(data);
+						}
+					}
+				});
+			//====================================End of function Schedule==================================================
+
+
+			// =================================== Start of Logout function =======================================
+			$('#btnlogout').click(function(){
+					window.location.href = "index.html";
+				});
+			// =================================== End of logout function =================================================
+
+		});
+		</script>
+
+	</head>
+
+	<body>
+		
+		<!-- ============================================ Page Home login ==========================================-->
+		<div data-role="page" id="pageHome" data-theme="b">
+			<div data-role="header" data-position="fixed">
+			<a data-role="button" id="btnlogout">HOME</a>
+				<h1> Welcome </h1>
+			</div>
+
+			<div data-role="content">
+				Hello!				
+				<p>In accordance with pertinent provision of CHED Memorandum Order (CMO) No. 09 Series of 2013 issued to create and design opportunities for physical fitness and well – being of students through sports, Gordon College conducts its annual Sports Festival. <br> <br>
+
+				The Office of Student Welfare and Services, affiliating with the GC faculty and staff, hereby issue the following guidelines for the effective and efficient conduct of the Academic Year's GC SPORTS FESTIVAL 2014 with the theme "Sportsmanship, Camaraderie and Transparency Through Sports", which will be spearheaded by the Institute of Human Kinetics. </p>
+
+			
+			</div>
+
+			<div data-role="footer" data-position ="fixed">
+				<div data-role="navbar" >
+						<ul>
+						<li> <a href="#pageUpdate" data-icon="refresh">UPDATE</a></li>
+						<li> <a href="#pageTeam" data-icon="user">TEAM</a></li>
+						<li> <a href="#PageSchedule"  data-icon="calendar">SCHEDULE</a></li>
+						<li> <a href="#PageAbout" data-icon="info">ABOUT</a></li>
+						</ul>
+				</div>
+			</div>
+
+		</div>
+		<!-- ============================================== End of Home Login =============================================== -->
+
+
+		<!-- =============================================== Page Update =====================================================-->
+		<div data-role="page" id="pageUpdate" data-theme="b">
+			<div data-role="header" data-position="fixed">
+				<a data-icon="home" href="#pageHome" id="btnHome">HOME</a>
+				<h1> UPDATE </h1>
+			</div>
+
+			<div data-role="content"> 
+				<div id="divPost">
+				</div>
+			</div>
+
+			<div data-role="footer" data-position ="fixed">
+				<div data-role="navbar" >
+						<ul>
+						<li> <a href="#" data-icon="refresh">UPDATE</a></li>
+						<li> <a href="#pageTeam" data-icon="user">TEAM</a></li>
+						<li> <a href="#PageSchedule"  data-icon="calendar">SCHEDULE</a></li>
+						<li> <a href="#PageAbout" data-icon="info">ABOUT</a></li>
+						</ul>
+				</div>
+			</div>
+
+		</div>
+		<!-- ===================================================== End of Home Login ================================================== -->
+
+
+
+		<!-- ================================== Page Update ======================================-->
+		<div data-role="page" id="pageUpdate" data-theme="b">
+			<div data-role="header" data-position="fixed">
+				<a data-icon="home" href="#pageHome" id="btnHome">HOME</a>
+				<h1> UPDATE </h1>
+			</div>
+
+			<div data-role="content"> 
+				<div id="divPost">
+				</div>
+			
+
+			</div>
+
+			<div data-role="footer" data-position ="fixed">
+				<div data-role="navbar" >
+						<ul>
+						<li> <a href="#" data-icon="refresh">UPDATE</a></li>
+						<li> <a href="#pageTeam" data-icon="user">TEAM</a></li>
+						<li> <a href="#PageSchedule"  data-icon="calendar">SCHEDULE</a></li>
+						<li> <a href="#PageAbout" data-icon="info">ABOUT</a></li>
+						</ul>
+				</div>
+			</div>
+
+		</div>
+		<!-- ============================= End of Home Login =========================== -->
+
+		<!-- ===================================================== Start of Page Schedule =============================================== -->
+		<div data-role="page" id="PageSchedule" data-theme="b">
+				
+				<div data-role="header" data-position="fixed"> 
+					<a data-icon="home" href="#pageHome" id="btnHome">HOME</a>
+					
+					<h1>SCHEDULE</h1>
+				</div>
+
+				<div data-role="content" role="main">
+						<div id="divSchedule">
+						</div>
+				</div>
+
+
+				<div data-role="footer" data-position="fixed" >
+					<div data-role="navbar">
+						<ul>
+						<li> <a href="#pageUpdate" data-icon="refresh">UPDATE</a></li>
+						<li> <a href="#pageTeam" data-icon="user">TEAM</a></li>
+						<li> <a href="#"  data-icon="calendar">SCHEDULE</a></li>
+						<li> <a href="#PageAbout" data-icon="info">ABOUT</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- ============================================End of Page Schedule ================================================= -->
+
+			<!-- ============================================ Start of Page Schedule =============================================== -->
+		<div data-role="page" id="pageTeam" data-theme="b">
+				
+				<div data-role="header" data-position="fixed"> 
+					<a data-icon="home" href="#pageHome" id="btnHome">HOME</a>
+					<h1>TEAMS</h1>
+				</div>
+
+				<div data-role="content">
+				<center>
+
+					<div  class="ui-grid-a">
+							<img src="logo/CBA_Logo.jpg" id="logoCBA" style="max-width:45%;"/>
+								<h3> CBA WIZARDS </h3>
+								<p> Wizards are small group of beings outwardly resembling men but possessing much greater physical and mental power. They are also called the ISTARI (wise ones) by the mythical elves. A CBA wizard is a practitioner of, especially in, business and accountancy. A helpful folk magician they provide the main means of neutralizing enemies who thought of themselves as more superior than CBA wizard. <br>
+								Colloquially anyone who is especially adept at some obscure or difficult business or accounting endeavor and who belongs under the College of Business and Accountancy, Gordon College, may be referred to as a CBA Wizard, magic is not a talent but a deliberate rewarding art of science superior power and intelligence. </p>
+							<hr>
+
+							<img src="logo/logoccs.png" id="logoCCS" style="max-width:45%;"/>
+								<h3>CCS PHOENIX</h3>
+								<p> Phoenix, known as the mythical bird that never die, flies far ahead to the front, always scanning the landscape and distant space. It represents our capacity for vision, for collecting sensory information about our environment and the events unfolding within it.  The Phoenix, with its great beauty, creates excitement and deathless inspiration. <br>
+								In Chinese mythology, the Phoenix is the symbol of high virtue and grace, power and prosperity. It represents the union of yin and yang. It was thought to be a gentle creature, so gentle that it crushed nothing, and eating only dewdrops.  Its body symbolizes the six celestial bodies.  The head is the sky, the eyes are the sun, the back is the moon, the wings are the wind, the feet are the earth, and the tail is the planets. Its feathers contain the five fundamental colors: black, white, red, green, and yellow and was said to represent the Confucian virtues of loyalty, honesty, decorum and justice. </p>
+							<hr>
+
+							<img src="logo/LOGO.png" id="logoCHAS" style="max-width:45%;"/> 
+								<h3> CAHS TIGERS </h3>
+								<p>White Tigers are magnificent creatures that possess an amazing combination of spectacular beauty and impressing power. Bengal tigers, as they are sometimes called, have blue eyes, pink nose, and creamy white fur covered with stripes of chocolate color. <br>
+								White tiger range in length between 8.8 to 10.2 feet. They weigh 419 and 569 pounds on the average. Females are smaller, and range in length from 7.11 to 8.7 feet, weighing around 350 pounds. <br>
+								White tigers are very rare animals. They are seen only in zoos nowadays. These animals are sometimes mistakenly considered to be albino species of tiger. However, it is not true to fact. White tiger occurs when both tigers that mate carry the gene for white coloring. A white tiger’s tail reaches the length of 3 to 4 feet. </p>
+							<hr>
+
+							<img src="logo/CeasLogo.png" id="logoCEAS" style="max-width:45%;"/>
+								<h3> CEAS MENTORS </h3>
+								<p>In Greek mythology, Mentors (sometimes Mentes) was the son of Alcumus and, in his old age, a friend of Odysseus. When Odysseus left for the Trojan War, he placed Mentors in charge of his son, Telamachus, and of his place. When Athena visited Telemachus she took the disguise of Mentor to hide herself from Telemachus "mother" suitor.  This is the source of the modern use of the word mentor: a trusted friend, a counselor or a teacher, usually a more experienced person. <br>
+								The College of Education, true to its mission, aims to produce multicultural, well-trained, dynamic and competitive teachers. Such mission shall consequently produce well-rounded mentors! <br>
+								The mentor is represented by a knight, who, during the middle age served as a teacher among the sons of kings and queens and of the nobilities. The knight is the person recognized by the society as one who has displayed great virtue. The knight is an honored man, and he claims the title "Sir", usually regardless of gender.<br>
+								The College of Education, Arts and Sciences, during the annual Sports Festival from this year onward, is very proud to be known as MENTORS- your knights, your teachers, your friend! </p>
+					</div>
+
+				</center>
+						
+				</div>
+
+
+				<div data-role="footer" data-position="fixed" >
+					<div data-role="navbar">
+						<ul>
+						<li> <a href="#pageUpdate" data-icon="refresh">UPDATE</a></li>
+						<li> <a href="#pageTeam" data-icon="user">TEAM</a></li>
+						<li> <a href="#PageSchedule"  data-icon="calendar">SCHEDULE</a></li>
+						<li> <a href="#PageAbout" data-icon="info">ABOUT</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- ===================================================End of Page Schedule ================================================= -->
+
+
+			<!-- =================================================== Start of Page About ============================================= -->
+
+			<div data-role="page" id="PageAbout" data-theme="b">
+				
+				<div data-role="header" data-position="fixed"> 
+					<a data-icon="home" href="#pageHome" id="btnHome">HOME</a>
+					<h1>ABOUT</h1>
+				</div>
+
+				<div data-role="content" role="main">
+					<!--=======================================Start of rules and Regulation ======================================= -->
+					<hr>	
+						<center><h3> SPORTSFEST RULES AND REGULATION </h3></center>
+					<hr>
+
+					<div data-role="collapsible-set" data-theme="a">
+						<div data-role="collapsible">
+					      <h3>Tournament</h3>
+						 	<ol>
+						 		<li>Sportsfest rules, as set by the committees, shall be implemented throughout the SportsFest schedules unless amended by the technical committee.</li>
+
+						 		<li>Rendering of decisions and interpretations, as to the application of game rule, shall be the prerogative of the designated official game officials.</li>
+						 		<li>In the event if any question or matter arising out of any point, which is not expressly provided for in any of the rules of the game, the decision of the official referee shall be final.</li>
+					    	</ol>
+					    </div>
+
+						<div data-role="collapsible">
+					      <h3>Protests</h3>
+						 	<p>Official protest shall be done in writing within 2 hours after the game.  It shall be addressed to the grievance committee (IHK Head, Sports Coordinator and OSS Head, Game Coordinators and Team Advisers) and shall be signed by both the team captain and team adviser. After critical deliberation and evaluation, as to the merits of the protest, the committee shall render its decision two (2) hours after the receipt of the protest.</p>
+					    </div>
+
+						<div data-role="collapsible">
+					      <h3>Default</h3>
+						 	<p>TEAM Events: A team that fails to show - up the required number of players to start the game ten (10) minutes after the designated game schedule shall be declared loser by default. <br>
+ 							INDIVIDUAL Events: An individual who fails to show - up ten (10) minutes after the designated game schedule shall be declared loser by default.
+							</p>
+					    </div>
+
+						<div data-role="collapsible">
+					      <h3>Suspension of Players</h3>
+						 	<p>Any player officially sanctioned, by the SportsFest technical committee for roughness or unsportsmanlike conduct shall be suspended and/or barred from participating in all events during the SportsFest. <br>
+							The same rule applies to coaches and other official members of any team who have been sanctioned for having committed “acts unbecoming of official.”
+							</p>
+					    </div>
+
+						<div data-role="collapsible">
+					      <h3>Uniform</h3>
+						 	<ol>
+						 		<li> All game participants are required to wear their official uniform during the game.</li>
+						 		<li> Official t-shirt and short pants shall constitute the official uniform.</li>
+						 		<li> The official t-shirt shall be designated as follows: team logo and name be placed in any part of the shirt, the color of which shall be in accordance with the agreed team color.</li>
+					    	</ol>
+					    </div>
+					</div>
+					<!-- ======================================End of rules and Regulation ======================================= -->
+
+					<!-- ======================================Starts of Sport Rules ============================================ -->
+
+					<hr>
+						<center> <h3> SPORTS RULES AND REGULATION</h3> </center>
+					<hr>
+
+					<fieldset class="ui-grid-a">
+				        <div class="ui-block-a"><a data-role ="button" data-rel="popup" href="#popSwimming" data-theme="a">Swimming</a></div>
+				        <div class="ui-block-b"><a data-role ="button" data-rel="popup" href="#popBasketball" data-theme="a">Basketball</a></div>
+				     </fieldset>
+
+
+				     <fieldset class="ui-grid-a">
+				        <div class="ui-block-a"><a data-role ="button" data-rel="popup" href="#popVolleyball" data-theme="a">Volleyball</a></div>
+				        <div class="ui-block-b"><a data-role ="button" data-rel="popup" href="#popBadminton" data-theme="a">Badminton</a></div>
+				     </fieldset>
+
+				     <fieldset class="ui-grid-a">
+				        <div class="ui-block-a"><a data-role ="button" data-rel="popup" href="#popAthletics" data-theme="a">Athletics</a></div>
+				        <div class="ui-block-b"><a data-role ="button" data-rel="popup" href="#popSepak" data-theme="a">Sepak</a></div>
+				     </fieldset>
+
+				     <fieldset class="ui-grid-a">
+				        <div class="ui-block-a"><a data-role ="button" data-rel="popup" href="#popTblTennis" data-theme="a">Table Tennis</a></div>
+				        <div class="ui-block-b"><a data-role ="button" data-rel="popup" href="#popArnis" data-theme="a">Arnis</a></div>
+				     </fieldset>
+
+
+				     <fieldset class="ui-grid-a">
+				        <div class="ui-block-a"><a data-role ="button" data-rel="popup" href="#popDanceSport" data-theme="a">Dance Sports</a></div>
+				        <div class="ui-block-b"><a data-role ="button" data-rel="popup" href="#popTaekwondo" data-theme="a">Taekwondo</a></div>
+				     </fieldset>
+
+				     <fieldset class="ui-grid-a">
+				        <div class="ui-block-a"><a data-role ="button" data-rel="popup" href="#popChess" data-theme="a">Chess</a></div>
+				        <div class="ui-block-b"><a data-role ="button" data-rel="popup" href="#popSportfest" data-theme="a">Mr. and Ms. Sportfest</a></div>
+				     </fieldset>
+					<!-- ======================================End of Sports Rules ============================================== -->
+
+					<!-- ====================================== Start of popUp Sports Rules ===================================== -->
+
+					<!--========================================popSwimming===========================================-->
+				<div data-role="popup" id="popSwimming">
+					<div data-role="header">
+						<a href="#PageAbout"  class="ui-btn-right">X </a>
+						<h3>Rules</h3>
+					</div>
+
+					<div data-role="content">
+						<p> Events for Male and Female <br>
+							50-meters freestyle, backstroke, breaststroke, butterfly . </p>
+						<ul>
+							<li>4 x 50 meter relay </li>
+							<li>4 x 50 meter medley relay </li>
+						</ul>
+						<p>
+							Proper swimming attire will only be permitted (swimming trunks or cycling shorts for men and bathing suit or cycling shorts for women). 
+						</p>							
+						</div>
+				</div>	
+				<!--========================================endpopSwimming===========================================-->
+
+				<!--========================================popBasketball===========================================-->
+				<div data-role="popup" id="popBasketball">
+					<div data-role="header">
+						<a href="#PageAbout"  class="ui-btn-right">X </a>
+						<h3>Rules</h3>
+					</div>
+
+					<div data-role="content">
+						<p> Conventional rules set by the Federation of International Basketball Association (FIBA) will be applied unless amendments are set by the sports fest committee.<br>
+						Each team shall consist of not more than twelve (12) active players and three (3) alternates. </p>
+						<ul>
+							<li>Basketball men 8 minutes each quarter </li>
+							<li>Basketball women 8 minutes each half </li>
+						</ul>
+						<p>
+							In each game, teams will be given a 10 minutes grace period (from the designated time set for the game) to field a team. Those who fail to do so shall be declared loser by default.
+						</p>							
+						</div>
+				</div>
+				<!--========================================endpopBasketball===========================================-->
+
+				<!--========================================StartofVolleyball=========================================-->
+				<div data-role="popup" id="popVolleyball">
+					<div data-role="header">
+						<a href="#PageAbout" class="ui-btn-right">X </a>
+						<h3>Rules</h3>
+					</div>
+
+					<div data-role="content">
+						<p>Conventional rules set by the Federation of International Volleyball Association (FIVA) will be applied unless amendments are set by the sport fest committee. Each team shall consist of twelve (12) active players. <br>
+						Each game will be played accordingly: </p>
+						<ul>
+							<li> Best of three game series for the elimination round </li>
+							<li> Best of five game series for the final round </li>
+							<li> In case of tie, quotient system will be used.</li>
+							<li> In each game, teams will be given a 10-minute grace period (from the designated time set for the game) to field a team. Those who fail to do so shall be declared loser by default. </li>
+						</ul>
+					</div>
+				</div>
+				<!--============================================EndofVolleyball=======================================-->
+
+				<!--============================================StartofBadminton =====================================-->
+				<div data-role="popup" id="popBadminton">
+					<div data-role="header">
+						<a href="#PageAbout"  class="ui-btn-right">X </a>
+						<h3>Rules</h3>
+					</div>
+
+					<div data-role="content">	
+						<p> Each team should have four (4) players for men single and doubles and also (4) for ladies single and doubles. Substitution of players is not allowed if the games have already started. Only players listed on the official list submitted to the badminton over-all coordinator are allowed to play.</p>
+
+						<p>IBF Rules will be implemented. <br>
+						<b>Toss: </b> 
+						<br>The winner of the toss can elect to serve or receive in the first game, or to choose to play particular end of the court. The loser of the toss makes the remaining choice.<br>
+						<b>Basic Aim:</b> <br>
+							You win a rally if you hit the shuttle over the net and onto the floor of the opposing side’s court. You lose the rally if you hit the shuttle into the net, or over the net but outside of the opposing side’s court. You also lose the rally if, for example, the shuttle touches you or your clothing, or if you hit before it crosses the net.<br>
+
+						<b>Serving:</b> <br> The service courts are slightly different for singles and doubles. A shuttle on the line is “in”. The server and receiver stand in the diagonally opposite service counts (always right hand at the start of the game) but therefore players may move anywhere on their side of the net.  The server must obey laws designed to force underhand delivery of the serve, and the receiver must stand still until the service is struck.
+						Scoring: 30 – point system for elimination and for 3rd and 4th placer, no setting at 29 all, 21-point system, rally point system will be followed for championship. </p>
+						</div>
+				</div>
+				<!--=============================================EndofBadminton========================================== -->
+
+				<!--=============================================StartofAthletics======================================== -->
+				<div data-role="popup" id="popAthletics">
+					<div data-role="header">
+						<a href="#PageAbout" class="ui-btn-right">X </a>
+						<h3>Rules</h3>
+					</div>
+
+					<div data-role="content">
+						<p> The athlete can only join the maximum of one track event (individual) plus 2 relays (Team): </p>
+
+						<table>
+							<tr> 
+								<td>Sprints</td>
+								<td>Middle</td>
+								<td>Relay</td>
+							</tr>
+							<tr> 
+								<td>100m Dash</td>
+								<td>800m Run</td>
+								<td>4x100m Relay</td>
+							</tr>
+							<tr> 
+								<td>200m Sprint</td>
+								<td>1500m Run</td>
+								<td>4x400m Relay</td>
+							</tr>
+							<tr> 
+								<td>400m Run</td>
+								<td> </td>
+								<td> </td>
+							</tr>
+						</table>
+							    		
+							
+							<p>Runners must wear shorts and rubber shoes or uniform representing their departments.
+							The competition must not touch the starting line or put their hand and feet over the line. An athlete who causes a false start receives a warning. After two more false starts he/she will be disqualified and must retire from the game. <br>
+							A false start is (a) moving or running before the gunfire (b) not following instruction for "on your mask" and "set" position and (c) impending other athletes to run. No overtaking and lane crossing for the spring and relay event. <br>
+							The best time will be declared as the champion for every event. All events are final sets. Only one representative for each team is allowed. </p>
+
+						<p>Sprint Races <br>
+						Men: These include the 100m/200m/400m/ <br>
+						. Follow General Rule. <br>
+						Women: These include the 100m/200m/400m <br>
+						. Follow General Rule. <br> </p>
+
+						<p>4 x 100 Relay <br>
+						This event will compose of four runners representing each department. Each member of the team will be positioned at every 100m distance around the track. The first runner will carry the “baton” (any piece of wood or round stick at leas t6 inches long) and pass it to the second runner, so forth, so on. Each runner will secure that the baton will not fail and should be taken over only in the specified take zone which is 10m before the starting line of the next runner. Follow General Rules. </p>
+
+						<p>OFFICIAL GUIDELINES FOR MEN AND WOMEN SHOT PUT <br>
+
+						•	All athletes must be enrolled in all programs in the institute.<br>
+						•	The teams are allowed to have at least 1 or 2 representative for men and women. <br>
+						•	All athletes are allowed to use the weight of 8kg of shot for men and 4 kg of shot for women.<br>
+						•	All athletes are required to use their team uniform as their identity during the game. <br>
+						•	All athletes are required only three (3) attempts in shot; the farthest throw is their final measure for the game. <br>
+						•	The participants have their rights to pass if they don’t want to throw and to reserve their energy to the next attempt. Ex. (first attempt, pass, and last throw). <br>
+						•	The next thrower should be on the deck to put and pick the shot after the last thrower. <br>
+						•	To avoid fouls/ fault and injuries or unexpected accidents, the athletes should use only "pushing" the shot and NOT by "throwing". <br>
+						•	Only the winners PROTEST are acceptable. </p>
+					</div>
+				</div>
+				<!--=======================================================EndofBadminton===============================================-->
+
+				<!--=======================================================StartOfSepak================================================ -->
+				<div data-role="popup" id="popSepak">
+					<div data-role="header">
+						<a href="#PageAbout" class="ui-btn-right">X </a>
+						<h3>Rules</h3>
+					</div>
+
+					<div data-role="content">
+						<p>Official International Rules for "Regu" Sepak Takraw (Playing 3 on 3) Excerpts from Current rules* with amendments approved by ISTAF in Bangkok, Thailand, July 2, 2007 </p>
+
+						<br>
+						<p>GENERAL <br>
+						In the event of any question or any matter arising out of any point, which is not expressly provided for in any of the rules of the game, the decision of the Official Referee shall be final. </p>
+
+
+						<br>
+						<p>THE PLAYERS <br>
+						A match is played by two “Regus”, each consisting of three players. (3 main players and 2 reserve) <br>
+						One of the three players shall be near the back of the court and he is called a "Tekong" (Server). <br>
+						The other two players shall be in front, closer to the net, one on the left side of the Tekong and the other on the right side. The player on the left is called a "Left Forward" and the player on the right is called a "Right Forward". </p>
+
+						<br> <br> <p>SUBSTITUTION <br>
+						There shall be no repeat of the same player in any "Team Event" competition involving more than one regu.<br>
+						Substitution of a player is allowed at any time on request made by the Team Manager or Coach to the Official Referee when the ball is not in play.<br>
+						Each “Regu” may nominate none to maximum of two reserve players, BUT CAN MAKE ONLY ONE SUBSTITUTION IN A MATCH.<br> </p>
+							
+						<br> <br> <p>POSITION OF PLAYERS DURING SERVICE <br>
+
+						At the start of play, the players of both regus must be in their respective courts in a ready position.<br>
+						The "Tekong" shall be standing with one of his/her feet inside the serving circle.
+						Both of the “Forward” players of the serving side must be standing in their respective quarter circles.<br>
+						The opponent or receiving regu is free to be anywhere within its court. <br> </p>
+
+						<br> <br> <p>THE START OF PLAY AND SERVICE <br>
+						The Regu that serves first (according to the toss decision) shall start the first set. The side that wins the first set shall begin serving in the second set. <br>
+						The throw or pitch of the Takraw ball from "Forward" player to the "Tekong" must be executed as soon as the Referee calls the score. If a Forward player throws the ball to the Tekong to serve before the Referee calls the score, it must be re-thrown and a warning will be given to the Regu. A repetition of this act will be considered a "Fault". <br>
+						During the service, as soon as the Tekong kicks the ball, all players are allowed to move around freely in their respective courts.<br>
+						The service is valid if the ball passes over the net, whether it touches the net or not, and inside the boundary of the two net tapes and boundary lines of the opponent’s court – as long as even the shadow of the ball (very outer edge) is directly over the tape or boundary line, it is considered in bounds.<br>
+						In a Team Event Game during a Knock-out Style Tournament, if a winner is already decided at the end of the first two Matches, the losing Team is not obligated to play a third Match with their third Regu. </p>
+
+					</div>
+				</div>
+				<!--=======================================================EndOfSepak========================================== -->
+
+				<!--=======================================================StartOfTblTennis========================================== -->
+				<div data-role="popup" id="popTblTennis">
+					<div data-role="header">
+						<a href="#PageAbout"  class="ui-btn-right">X </a>
+						<h3>Rules</h3>
+					</div>
+
+					<div data-role="content">
+						<p>Each team should have four (4) players for men single and doubles and also (4) for ladies single and doubles. Substitution of players is not allowed if the games have already started. Only players listed on the official list submitted to the table tennis over-all coordinator are allowed to play. </p>
+						
+						<p>The points</p>
+						<ul>
+							<li>If he fails to make a good service </li>
+							<li>If he fails to give a good return </li>
+							<li>If he obstructs the ball, except for "net" </li>
+							<li>If the ball touches his court twice successively </li>
+							<li>If he strikes the ball twice successively </li>
+							<li>If, when he is serving, he is partners stamps his foot </li>
+							<li>If he, or anything he wears or carries, moves the playing surface while the ball in play </li>
+							<li>If his free hand touches the playing surface while ball is un-play </li>
+							<li>If he, or anything he wears, carries, touches the net or its support while the balance while the ball is in play </li>
+						</ul>
+
+						<p>The Choices of Ends and Services <br>
+							The player who started at one end in a game shall start at the other end in the, immediately subsequent game, and so on, until the end of the match. In the last possible game of a match, the player, or pairs shall change end first until either player reaches the score of 2. </p> <br>
+
+						<p>The Change of Service <br>
+							In singles, after two points, the receiver shall become the server, and so on, until the end of the game. </p> <br>
+						
+						<p>The Service<br> 
+							Service shall begin with the ball resting on the palm of the freehand, which shall be stationary, open and flat, with the fingers together and thumb free.	 </p>					
+						</div>
+				</div>
+				<!--=======================================================EndOfTblTennis========================================== -->
+
+				<!--=======================================================StartofArnis========================================== -->
+				<div data-role="popup" id="popArnis">
+					<div data-role="header">
+						<a href="#PageAbout"  class="ui-btn-right">X </a>
+						<h3>Rules</h3>
+					</div>
+					<div data-role="content">
+						<p> A.	COMPETITION RULES <br>
+						<br>The i-Arnis Rules and Regulations in the conduct of Arnis Competition shall be applied in accordance with Arnis Pederasyong Internasyonal (i-Arnis) International Rules.  <br> <br>
+
+						B.	EVENTS FOR FULL-CONTACT SPARRING <br>
+
+						<table>
+							<tr>
+								<td> </td>
+								<th>Men's Division</th>
+								<th>Women's Division</th>
+							</tr>
+
+							<tr>
+								<td>Fly</td>
+								<td>Below 43kg.</td>
+								<td>Below 36kg.</td>
+							</tr>
+
+							<tr>
+								<td>Fin</td>
+								<td>43-47 kg.</td>
+								<td>36-38 kg.</td>
+							</tr>
+
+							<tr>
+								<td>Middle</td>
+								<td>78-86 kg.</td>
+								<td>61-66 kg.</td>
+							</tr>
+
+							<tr>
+								<td>Feather</td>
+								<td>51-55 kg.</td>
+								<td>40-44 kg.</td>
+							</tr>
+						</table>
+
+						<br><br>C.	EVENTS FOR ANYO (MEN AND WOMEN)<br>
+
+						<br>Solo Single Baston
+						<br>Solo Doble Baston
+						<br>Synchronize Single Baston
+						<br>Synchronize Doble Baston
+
+						<br><br>D. MATCHING AND PAIRING <br>
+						
+						<ul>
+							<li>In the Full Contact Event, blind matching and pairing for the single elimination (knock out) system shall be used. The round robin system will be used if there are only three (3) participants in a division. NO WIN NO MEDAL RULE SHALL BE APPLIED </li>
+
+							<li> In the Anyo Event, the order of the competition shall be decided through drawing of lots. </li>
+						</ul>
+
+						<br><br>COMPETITION UNIFORM/COSTUME
+						<br>.FULL CONTACT COMPETITION
+						<br>i.    College/Team Color or White T - shirt 
+						<br>ii.	Plain red pants or GC Jogging Pants 
+						<br>iii.	Rubber soled shoes 
+							
+
+						<br><br>ANYO COMPETITION
+						<br>A. COSTUMES
+						<br>Participants of ANYO competition may use ETHNIC in origin Costumes to enhance their presentations. They can also wear red loose pants and white short sleeves t-shirt as prescribed in the Full Contact uniform requirement. 
+						<br>B. WEAPONS
+						<br>A player may have the option to choose any of the following weapons in all ANYO events:
+						Wooden/Rattan stick  
+						<br>Wooden replica of a Bladed Weapon
+						<br>Weapon length for stick(s) should measure from a minimum of 24 inches to a maximum of 36 inches.
+						
+						<br><br>C. CD/USB FOR MUSIC
+
+						<br><br> E. DURATION OF THE MATCH 
+							<br>A match for the Full Contact Event shall have a maximum of three (3) rounds. Each round shall last for a maximum of two minutes 
+
+						<br> <br>F. PROTEST AND COMPLAINTS
+						<br>Complaints or protest must be in writing by the COACH addressed to the TECHNICAL COMMITTEE and forwarded immediately after the match to the Officials Table. Any action made otherwise shall be nullified.
+
+						<br><br>G .RANKING
+						<br>A point system shall be used in determining the overall standing of the competition
+
+
+						<br><br>1.	FULL CONTACT – shall be adopting the single- round robin 
+						<br>2.	ANYO shall be adopting a ranking system of competition. </p>
+							
+					</div>
+				</div>
+				<!--=======================================================EndOfArnis========================================== -->
+				
+				<!--=======================================================StartofTaekwondo========================================== -->
+
+				<div data-role="popup" id="popTaekwondo">
+					<div data-role="header">
+						<a href="#PageAbout"  class="ui-btn-right">X </a>
+						<h3>Rules</h3>
+					</div>
+
+					<div data-role="content">
+						
+						<p>A.	QUALIFICATIONS FOR PARTICIPATION <br>
+						-	A bona fide GC student who is fit and able to compete </p> <br>
+
+						<p>B.	WEIGH-IN </p>
+						<br> 1.	Only Deputized Weigh-in Officials/Coordinators are allowed to weight-in participants for the competitions.
+						<br> 2.	The school clinic shall provide the official weighing scales and height measurement guides.
+						<br> 3.	Weigh-in attire: The player’s attire during weight-in shall be shirt with shorts, jogging pants or dobok pants. Footwear, socks, and jewelry shall be removed to weigh-in
+						<br> 4.	Pre-weigh-in: The organizing committee shall provide a pre-weigh-in set-up at the official weigh-in venue where the players can check their weight prior to final weigh-in.
+						<br>5.	FINAL WEIGHT-IN:
+							<br> > Where there is a pre-weigh-in-set-up, players may only weigh-in once for the final weigh-in. In the absence of a pre weigh-in set-up, players will be given only two chances to weigh-in.
+							<br> > OFFICIAL WEIGHT AND HEIGHT LIMITS WILL BE STRICTLY FOLLOWED, NO ALLOWANCES WILL BE GIVEN.
+						<br>6.	A player must compete in the weight category registered in the final weigh-in 
+						<br> <br>
+
+
+						<table>
+							<tr>
+								<td>CATEGORY</td>
+								<td>MEN</td>
+								<td>WOMEN</td>
+							</tr>
+
+							<tr>
+								<td>1.Fin</td> 							           	
+								<td>Not exceeding 54kg.</td>
+								<td>Not exceeding 47kg.</td>
+							</tr>
+
+							<tr>
+								<td>2.Fly</td>            
+								<td>Over 54kg. to 58 kg.</td>
+								<td>Over 47kg. to 51kg.</td>
+							</tr>
+
+							<tr>
+								<td>3.Bantam</td> 	     	
+								<td>Over 58kg. to 62 kg.</td>
+								<td>Over 51kg. to 55kg.</td>
+							</tr>
+
+							<tr>
+								<td>4.Feather</td> 	     	
+								<td>Over 62kg. to 67 kg.</td>
+								<td>Over 55kg. to 59kg.</td>
+							</tr>
+
+							<tr>
+								<td>5.Light</td>           	
+								<td>Over 67kg. to 72 kg.</td>
+								<td>Over 59kg. to 63kg.</td>
+							</tr>
+
+							<tr>
+								<td>6.Welter</td> 	     	
+								<td>Over 72kg. to 78 kg.</td>
+								<td>Over 63kg. to 67kg </td>
+							</tr>
+
+							<tr>
+								<td>7.Middle</td>      	
+								<td>Over 78kg. to 84 kg.</td>
+								<td>Over 67kg. to 72kg.</td>
+							</tr>
+
+							<tr>
+								<td>8.Heavy</td> 	         	            
+								<td>Over 84kg.</td>
+								<td>Over 72kg.</td>
+							</tr>
+
+						</table>						
+
+						<p>C.	METHOD OF COMPETITION <br>
+						1.	The competition shall be individual, single elimination <br> <br>
+
+						D.	GENERAL PROVISIONS <br>
+						2. Technical rules are based on PTA rules </p>
+
+						</div>
+				</div>
+
+				<!--=======================================================EndOfTaekwondo========================================== -->
+
+
+				<!--=======================================================StartofChess========================================== -->
+				<div data-role="popup" id="popChess">
+					<div data-role="header">
+						<a href="#PageAbout"  class="ui-btn-right">X </a>
+						<h3>Rules</h3>
+					</div>
+
+					<div data-role="content">
+						<p>Chess tournament shall be individual competition. Each team shall field in two players (for each category, one playing in board 1, and the other in board 2). Team’s best chess player shall sit in board 1.<br>
+							Point shall be as follows: (applies to both boards) <br>
+							<table>
+								<tr>
+									<td>Win</td>
+									<td>1 point</td>
+								</tr>
+								<tr>
+									<td>Loss/Default</td>
+									<td>0 point</td>
+								</tr>
+								<tr>
+									<td>Draw</td>
+									<td>0.5 point</td>
+								</tr>
+							</table>
+											
+							Each match requires one game only. It shall be played in a single-round scheme only with 30 minutes given time for each player. Every single game is crucial. The individual with highest accumulated score shall be the champion. The other individual who garner 2nd, 3rd and 4th most points will be 1st, 2nd, and 3rd runner-ups respectively. <br>
+							In case of tie, a one-game knock-out match of the Board 1 player only of both teams concerned shall decide the issues. Modification of rules may be made as the need arises subject to the approval of the technical committees. </p>						
+						</div>
+				</div>
+				<!--=======================================================EndOfChess========================================== -->
+
+				<!--================================================StartofMs&Mr================================================ -->
+				<div data-role="popup" id="popSportfest">
+					<div data-role="header">
+						<a href="#PageAbout"  class="ui-btn-right">X </a>
+						<h3>Rules</h3>
+					</div>
+
+					<div data-role="content">
+						<p>Each College should have an official representative to vie for the title of Mr. and Ms. Sports Fest 2014. <br>
+
+						<br>The Mr. and Ms. Sports fest 2014 candidate must: <br>
+
+						<ol>
+							<li>Be a bona fide student of GC in their respective College. </li>
+							<li>Be of pleasing personality </li>
+							<li>5’5 for female and 5’7 for male </li>
+						</ol>
+						<br>
+						Specific Guidelines for Mr. and Ms. Sports Fest 2014: <br>
+						1.	Wear any Sports attire representing the team color. <br> <br>
+
+						The criteria for judging shall be as follows: <br>
+						<table>
+							<tr>
+								<td>Audience appeal</td>
+								<td>2 points</td>
+							</tr>
+							<tr>
+								<td>Personality</td>
+								<td>4  points</td>
+							</tr>
+							<tr>
+								<td>Question and Answer</td>
+								<td>4 points</td>
+							</tr>
+							<tr>
+								<td> </td>
+								<td>Total: 10 points</td>
+							</tr>
+						</table>					
+
+						<br>JUDGES: <br>
+						Guidelines in selecting/choosing judges: <br>
+							<ol>
+								<li>Must be of professional character. </li>
+								<li>Must have at least one year experience in judging prestigious beauty contests. </li>
+								Possesses high standard of qualification in terms of personality, beauty, intelligence and educational attainment. </li>
+								<li>Not in relation/affiliation with any of the college/team. </li>
+							</ol>
+
+						<br>Awards and Prizes: <br>
+							<ol>
+							<li> Ms. Sportsfest 2014 --> Sash and bouquet <br>
+							Mr. Sportsfest 2014	--> Sash </li>
+							<li> Ms. Best in Sportswear 2014 Sash and bouquet <br>
+							Mr. Best in Sportswear 2014 Sash
+							</ol>
+							</p>
+							
+						</div>
+				</div>
+				<!--=======================================================EndOfMr&Ms========================================== -->
+
+				<!--===================================================StartOfDanceSport========================================== -->
+
+				<div data-role="popup" id="popDanceSport">
+					<div data-role="header">
+						<a href="#PageAbout"  class="ui-btn-right">X </a>
+						<h3>Rules</h3>
+					</div>
+
+					<div data-role="content">
+						
+						<p>Is a better selection POOL to:</p>
+						<ol>
+							<li> Give EQUAL CHANCES to all ballroom dance enthusiasts who are bona fide students of Gordon College to showcase their talents. </li>
+							<li> Encourage students whose heart are into and/or have skills in ballroom dancing to hone their talents and become active competitors. </li>
+							<li>Develop dance sports (ballroom) team TRULY COMMITTED and have the good attitude to compete for ALCU GAMES and/or other dances sports competition representing Gordon College. <br>
+							(Dance Sports competitors are not limited only to the winners of GC dance sports competition. Selection of dance sports competitors for ALCU Games is subject to Dance Sport training program guidelines.) </li>
+						</ol>
+
+						<p>DRESS ATTIRE must be modest. (Dancing is not about showcasing flesh).</p>
+							<ol>
+								<li>Standard <br>
+								Female: <br>
+								A typical dress and/or gown used in a party or social gathering. The dress may be below the knee to before ankle in length to avoid stepping on it.<br> <br>
+
+								Male: <br>
+								Long sleeve polo with necktie and slacks. Black leather shoes are appropriate.
+								</li>
+
+								<li> 2.	Latin. <br>
+								Female: <br>
+								One piece dress. The length may be above the knee but not too short to see the inner underwear. Wearing boy-leg shorts is encouraged. Shoes with heels are appropriate. <br> <br>
+
+								Male: <br>
+								Long or short sleeve body fit polo or shirt in plain color. Slacks or bell-bottom pants may be worn. Black shoes are appropriate to be worn. </li>
+							</ol>
+
+						<p>MUSIC: <br>
+						1.	CD or Live Band <br>
+
+						PARTNERSHIP of the competitors. <br>
+							Partners or couple must be of the same course/ college.<br>
+						ROUTINE: <br>
+							Must follow International Dance Sports Federation (IDSF) Bronze/Silver/Gold level steps routines (watch youtube videos typing dance name and the routine level, e.g. Waltz Bronze level I routine, rumba Silver level I routine.)<br> <br>
+
+						Length of routine per dance is 2 minutes. <br>
+
+						DISQUALIFICATION:<br>
+						Lifting (both feet of one of the couple is off the ground) is not allowed. Tumbling or any cartwheel is prohibited.
+						Kissing the partner during the dance is not allowed. <br>
+						Proper and correct body lines and movements, techniques, posture and accuracy of intricate steps (see ALCU GAMES Dance sports guidelines) must be observed. <br>
+
+						<br>
+						COMPETITION <br> <br>
+
+							Heat I. Elimination of first group.<br>
+							Heat II. Elimination of second group.<br>
+							Final Heat. Top 2 of heat I and heat II. <br> <br>
+
+						DANCES PER CATEGORY.<br> <br>
+
+							Standard. Waltz- Tango- Quickstep <br>
+							Latin. Cha-Cha- Rumba- Jive	<br><br>
+
+						AWARDS: by couple per category. <br> <br>
+								
+						Champion <br>
+								1st Runner-up<br>
+								2nd Runner-up<br>
+
+						<br>LET’S offer this opportunity to many. Let’s allow and support others to flourish in dancing. Let’s now limit dancing to few and to costs that others usually think of. <br> <br>
+
+						SELECTION OF GC SPORTS<br><br>
+
+						CRITERIA FOR JUDGING <br>
+						A.	TIMING AND BASIC RHYTHM <br>
+						The judge must determine whether the couple is dancing in time and observing the basic rhythm. Dancing in time means that a step is taken neither prior to nor after the beat, but on the beat. <br> <br>
+
+						B.	BODY LINES <br>
+						The term body lines relate to the couple as a whole. These include: <br>
+						Arm lines	Neck and Head Lines <br>
+						Back lines	Right and left side lines <br>
+						Shoulder lines<br>
+						Hip lines (pelvic) <br>
+						Leg lines <br> <br>
+
+						C.	MOVEMENT<br>
+						The judge must determine whether the movement is in keeping with the character of the dance and assesses the rise and fall, swing and balance of the couple. A greater swing only justifies better marking if the movement is controlled and balanced.<br> <br>
+
+						D.	RHYTHMIC INTERPRETATION <br>
+						The judge must assess the rhythmic interpretation of the dance. This reveals the capacity of the artistic choreography and the musical involvement of the couple in the dance. A change of rhythm to suit the music incurs a danger of timing errors which must be judged in the timing and basic rhythm. <br> <br>
+
+						E.	FOOTWORK TECHNIQUE<br>
+						The judge must asses the correct use of each part of the foot, posture movement and closing of the feet and the expression and control of foot movements.<br> <br>
+
+						Adopted from ALCULYMPICS ’08, Source: IDSF Adjudicators Congress Moscow 1997. February 10, 1997 </p>
+
+				</div>
+			</div>
+
+					<!-- ====================================== End of popUp Sports Rules ======================================= -->
+
+
+				</div>
+
+
+				<div data-role="footer" data-position="fixed" >
+					<div data-role="navbar">
+						<ul>
+						<li> <a href="#pageUpdate" data-icon="refresh">UPDATE</a></li>
+						<li> <a href="#pageTeam" data-icon="user">TEAM</a></li>
+						<li> <a href="#PageSchedule"  data-icon="calendar">SCHEDULE</a></li>
+						<li> <a href="#" data-icon="info">ABOUT</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- =================================================== End of Page About =============================================== -->
+
+	</body>
+</html>
